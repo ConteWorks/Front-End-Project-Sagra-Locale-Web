@@ -1,0 +1,631 @@
+/* =======================================================
+    STILE CSS PER SAGRA U SFRIUONZOLO SOTTO L'ARCO
+    Tema: Rustico, Tradizionale, Accogliente
+========================================================== */
+
+/* =======================================================
+1. VARIABILI E PALETTE COLORI
+========================================================== */
+:root {
+    --color-primary: #8c2a2a; /* Rosso vino / Mattone */
+    --color-secondary: #ffc107; /* Giallo caldo / Senape */
+    --color-background: #fdf6e3; /* Crema chiaro / Carta antica */
+    --color-text: #333;
+    --color-header: #5a1e1e; /* Marrone scuro / Ruggine */
+    --color-success: #28a745;
+    --color-error: #dc3545;
+
+    --font-serif: 'Georgia', serif;
+    --font-sans: 'Arial', sans-serif;
+}
+
+/* =======================================================
+2. RESET E LAYOUT BASE
+========================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    padding-top: 60px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =======================================================
+3. TIPOGRAFIA
+========================================================== */
+h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5em;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8em;
+    color: var(--color-header);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #555;
+}
+
+/* =======================================================
+4. HEADER E NAVBAR
+========================================================== */
+.header {
+    background-color: var(--color-header);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100vw;      /* prende tutta la larghezza della finestra */
+    margin: 0;         /* rimuove eventuali margini */
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background-color: var(--color-header);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.logo-text {
+    font-family: var(--font-serif);
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--color-secondary);
+    text-shadow: 1px 1px 0px var(--color-primary);
+    line-height: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;          /* mantiene le voci in riga */
+    gap: 20px;              /* spazio tra le voci */
+    align-items: center;     /* allinea verticalmente */
+}
+
+.nav-links li {
+    display: flex;          /* mantiene i <li> flessibili */
+}
+
+.nav-links a {
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    position: relative;     /* necessario per la linea ::after */
+}
+
+.nav-links a:hover {
+    background-color: var(--color-primary);
+}
+
+/* Link attivo */
+.nav-links a.active {
+    background-color: var(--color-secondary);
+    color: var(--color-header);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-primary);
+}
+
+/* Mantieni hover sul link attivo */
+.nav-links a.active:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-header);
+}
+
+
+/* =======================================================
+5. HERO SECTION (HOME)
+========================================================== */
+.hero-section {
+    background: linear-gradient(rgba(255,255,255,0.85), rgba(253,246,227,0.8)), url('path/to/background-arch-image.jpg') center/cover;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.hero-content {
+    background-color: rgba(255,255,255,0.9);
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 2px dashed var(--color-secondary);
+}
+
+.hero-content h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+/* =======================================================
+6. CAROSELLO
+========================================================== */
+.carousel-container {
+    max-width: 100%;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 50;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.carousel-button:hover {
+    opacity: 1;
+}
+
+.prev-button { left: 10px; }
+.next-button { right: 10px; }
+
+/* =======================================================
+   NEWS della sezione INDEX
+======================================================== */
+
+/* Card base */
+.news-slide {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    min-height: 320px;
+
+    /* CENTRAMENTO per card SENZA immagine */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;     /* centro verticale */
+    align-items: center;          /* centro orizzontale */
+    text-align: center;
+}
+
+/* Card CON immagine → torna layout normale */
+.news-slide.has-image {
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Immagine della news */
+.news-slide img {
+    width: 100%;
+    max-width: 350px;
+    max-height: 220px;
+    border-radius: 10px;
+
+    object-fit: contain;  
+    margin: 0 auto 10px;
+    display: block;
+    background-color: #f1f1f1; /* per immagini con trasparenza */
+}
+
+/* Titolo */
+.news-slide h3 {
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+/* Paragrafo */
+.news-slide p {
+    color: #444;
+}
+
+/* =======================================================
+7. NEWS / POST CARDS
+========================================================== */
+/* Contenitore principale: stessa larghezza di Dove Siamo */
+
+.container-post {
+    max-width: 900px; /* restringo per centrare il masonry */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Masonry layout */
+.posts {
+    column-count: 2;          /* due colonne */
+    column-gap: 20px;         /* spazio tra le colonne */
+}
+
+/* Ogni card */
+.post-card {
+    break-inside: avoid;      /* evita che si spezzi tra colonne */
+    margin-bottom: 20px;      /* spazio verticale */
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    display: inline-block;    /* necessario per column layout */
+    width: 100%;
+}
+
+.post-card img,
+.post-card iframe {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.post-card h3 {
+    color: #d35400;
+    margin-bottom: 15px;
+}
+
+.post-card p {
+    color: #444;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.post-card .date {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+/* =======================================================
+8. MENU / CARDS
+========================================================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fff3e0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #d35400;
+}
+
+.card-content p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* =======================================================
+9. LIGHTBOX
+========================================================== */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    background: #fff;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.lightbox-content h3 {
+    margin-bottom: 10px;
+    color: #d35400;
+}
+
+.lightbox-content p {
+    color: #333;
+}
+
+.lightbox-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* =======================================================
+10. DOVE TROVARCI / LOCATION
+========================================================== */
+.where-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: var(--font-sans);
+    color: #333;
+}
+
+.where-container h1 {
+    text-align: center;
+    color: #d35400;
+    margin-bottom: 30px;
+}
+
+.where-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.where-text p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #d35400;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.map-link:hover {
+    background-color: #b24300;
+}
+
+.where-map iframe {
+    border: 0;
+    border-radius: 10px;
+}
+
+/* =======================================================
+11. FOOTER
+========================================================== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-header);
+    color: white;
+    margin-top: 30px;
+}
+
+/* =======================================================
+12. RESPONSIVITÀ (MOBILE FIRST)
+========================================================== */
+@media (max-width: 900px) {
+
+    .logo-img {
+        height: 35px;
+    }
+
+    .logo-text {
+        font-size: 1em;
+        line-height: 1.1em; /* scritta su due righe */
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .hero-content {
+        padding: 25px;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px; 
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        gap: 0;
+        margin-top: 10px;
+        padding: 10px 10px 0 10px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .nav-links li {
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .nav-links a span {
+        display: none;
+    }
+
+    .mobile-icon {
+        display: inline-block;
+        font-size: 1.5em;
+        padding: 5px;
+        line-height: 1;
+    }
+
+    .nav-links a {
+        padding: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .news-grid, .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .map-container, .where-map iframe {
+        height: 300px;
+    }
+   
+    .posts {
+        column-count: 1;
+        padding: 0px;
+    }
+
+}
+
+
+
+
+
+
