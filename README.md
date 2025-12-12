@@ -12,13 +12,13 @@ Il sito è pensato per essere chiaro e accessibile, con contenuti multimediali (
 ![Home desktop](ConteGiuseppe/ConteGiuseppe/docs/screenshot_home.png)
 
 **Home (mobile):**  
-![Home mobile](ConteGiuseppe/docs/screenshot_mobile_home.png)
+![Home mobile](ConteGiuseppe/ConteGiuseppe/docs/screenshot_mobile_home.png)
 
 **Menu / Lightbox:**  
-![Menu](ConteGiuseppe/docs/screenshot_menu.png)
+![Menu](ConteGiuseppe/ConteGiuseppe/docs/screenshot_menu.png)
 
 **Location / Mappa:**  
-![Location](ConteGiuseppe/docs/screenshot_location.png)
+![Location](ConteGiuseppe/ConteGiuseppe/docs/screenshot_location.png)
 
 ## Funzionalità principali
 - Navbar e footer inclusi dinamicamente via `fetch`.
