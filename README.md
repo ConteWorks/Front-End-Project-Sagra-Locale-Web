@@ -9,7 +9,7 @@ Il sito è pensato per essere chiaro e accessibile, con contenuti multimediali (
 
 ## Screenshot
 **Home (desktop):**  
-![Home desktop](ConteGiuseppe/docs/screenshot_home.png)
+![Home desktop](ConteGiuseppe/ConteGiuseppe/docs/screenshot_home.png)
 
 **Home (mobile):**  
 ![Home mobile](ConteGiuseppe/docs/screenshot_mobile_home.png)
